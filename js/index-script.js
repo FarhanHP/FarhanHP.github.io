@@ -1,3 +1,7 @@
+if(window.location.href.toString().includes("index.html")){
+    window.location.href = window.location.href.toString().replace("index.html", "")
+}
+
 //sticky
 let navbar = document.getElementsByTagName("nav")[0];
 let offsetTopNavbar = navbar.offsetTop;
