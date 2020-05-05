@@ -142,7 +142,7 @@ submitLogin.onclick = function(){
         setCookieFromJSON(user);
 
         //redirect
-        let target = window.location.toString().replace("index.html", "pages/home.html");
+        let target = window.location.toString() + "pages/home.html";
         window.location.replace(target);
     }
     else{
