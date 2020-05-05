@@ -142,7 +142,7 @@ submitLogin.onclick = function(){
         setCookieFromJSON(user);
 
         //redirect
-        window.location.href = "http://farhanhp.github.io/pages/home.html";
+        window.location.href = "pages/home.html";
     }
     else{
         loginError.innerHTML = "Username or Password Invalid";
