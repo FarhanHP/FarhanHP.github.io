@@ -1,7 +1,3 @@
-if(window.location.href.toString().includes("index.html")){
-    window.location.href = window.location.href.toString().replace("index.html", "");
-}
-
 //sticky
 let navbar = document.getElementsByTagName("nav")[0];
 let offsetTopNavbar = navbar.offsetTop;
@@ -146,8 +142,7 @@ submitLogin.onclick = function(){
         setCookieFromJSON(user);
 
         //redirect
-        let target = window.location.toString() + "pages/home.html";
-        window.location.replace(target);
+        window.location.href = "farhanhp.github.io/pages/home.html";
     }
     else{
         loginError.innerHTML = "Username or Password Invalid";
