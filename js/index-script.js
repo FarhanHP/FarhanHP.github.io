@@ -1,5 +1,3 @@
-alert(window.location.href.toString());
-
 if(window.location.href.toString().includes("index.html")){
     window.location.href = window.location.href.toString().replace("index.html", "");
 }
