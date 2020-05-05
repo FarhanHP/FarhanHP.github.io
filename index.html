@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/guildhub-logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>GuildHub</title>
+</head>
+<body>
+    <header class="black">
+        <figure>
+            <div class="row">
+                <img src="img/guildhub-logo.png" alt="" class="col m2 s6 offset-m5 offset-s3">
+            </div>
+            <div class="row">
+                <figcaption class="white-text col m2 s6 offset-m5 offset-s3 center-align">GuildHub</figcaption>
+            </div>
+        </figure>
+
+        <nav class="yellow accent-4">
+            <div class="nav-wrapper homepage">
+                <div class="toggle-menu hide-on-med-and-up">
+                    <img src="../img/toggle-menu-btn.png">
+                </div>
+                <ul class="center-align yellow accent-4 hide-on-small-only">
+                    <li>
+                        <a href="#about"><b>About</b></a>
+                    </li>
+                    <li>
+                        <a href="#guilds"><b>Guilds</b></a>
+                    </li>
+                    <li>
+                        <a href="#join"><b>Join</b></a>
+                    </li>
+                    <li>
+                        <a class="login-btn"><b>Login</b></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="black brief-guildhub-information">
+            <div class="brief-explanation">
+                <div class="container">
+                    <h1>GuildHub</h1>
+                    <div>
+                        <p>Guild System for World of Warcraft (WoW).</p>
+                        <p>Connecting The Player to Players.</p>
+                        <p>Connecting The Player to Guilds.</p>
+                    </div>
+                    <a href="#join" class="btn yellow accent-4"><p>Join Now !</p></a>
+                </div>
+            </div>
+            <div class="brief-features">
+                <div class="feature-card white">
+                    <img src="img/feature-card/progress.png" alt="">
+                    <div>
+                        <b>Monitor Your WoW Account Progress</b>
+                    </div>
+                </div>
+                <div class="feature-card white">
+                    <img src="img/feature-card/guild.png" alt="">
+                    <div>
+                        <b>Search Guilds That Fit Your Interest</b>
+                    </div>
+                </div>
+                <div class="feature-card white">
+                    <img src="img/feature-card/jobs.png" alt="">
+                    <div>
+                        <b>Manage jobs</b>
+                    </div>
+                </div>
+                <div class="feature-card white">
+                    <img src="img/feature-card/forum.png" alt="">
+                    <div>
+                        <b>Forum for Guild</b>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <article id="about" class="white grey lighten-3">
+            <h1 class="center-align">What is GuildHub ?</h1>
+            <div>
+                <div>
+                    <img src="img/guildhub-logo.png">
+                </div>
+                <p>GuildHub is a guild system for World of Warcraft (WoW) players. By using GuildHub, You don't need to log in to the game in order to do some simple things such as seeing basic informations about Your WoW account, exiting and joining guild, and manage the jobs. GuildHub also has guild forum so that You and other guild members can use it to discuss everything about Your guild. In order to do that, You just simply access GuildHub website by using an internet connected device. If You don't have an account, You can use your favorite platform such as Google, Github, Twitter and Facebook to register.</p>
+            </div>
+        </article>
+
+        <article id="guilds" class="white yellow accent-4">
+            <h1 class="center-align white-text">Search Guilds That Fit Your Interest</h1>
+            <div id="guild-list">
+            </div>
+        </article>
+
+        <article id="join" class="white grey lighten-3">
+            <h1 class="center-align">Join Us !</h1>
+            <h3 class="center-align">Choose a Platform to Register</h3>
+            <div>
+                <div class="platform-logo-container">
+                    <img class="platform-logo" src="img/platform-logo/facebook-grey.png">
+                </div>
+
+                <div class="platform-logo-container">
+                    <img class="platform-logo" src="img/platform-logo/github-grey.png">
+                </div>
+
+                <div class="platform-logo-container">
+                    <img class="platform-logo" src="img/platform-logo/twitter-grey.png">
+                </div>
+                <div class="platform-logo-container">
+                    <img class="platform-logo" src="img/platform-logo/google-grey.png">
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="yellow accent-4 homepage">
+        <div class="container center-align">
+            <b class="white-text">Copyright &copy; 2020 Farhan Herdian Pradana</b>
+        </div>
+    </footer>
+
+    <div class="modal-container" id="login">
+        <div class="yellow accent-4 modal-content">
+            <div class="close-modal-container">
+                <div class="close-modal">
+                    &times;
+                </div>
+            </div>
+            <h1 class="black">Login</h1>
+            <form action="" class="black">
+                <div class="container">
+                    <b>Username : </b>
+                    <input type="text" name="username-login">
+                </div>
+                <div class="container">
+                    <b>Password : </b>
+                    <input type="password" name="password-login">
+                </div>
+                <p class="center-align red-text" name="error-login"></p>
+                <div class="container">
+                    <input type="button" value="Log In" class="btn" name="submit-login">
+                </div>
+                <div class="container">
+                    <p class="center-align">Don't have an account ? <a href="#join" class="close-modal">Register</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal-container" id="register">
+        <div class="yellow accent-4 modal-content">
+            <div class="close-modal-container">
+                <div class="close-modal">
+                    &times;
+                </div>
+            </div>
+            <h1 class="black">Register</h1>
+            <form action="" class="black">
+                <div class="container">
+                    <span><b>Username : </b><span name="error-username-register" class="red-text"></span></span>
+                    <input type="text" name="username-register" id="" value="anonymous">
+                </div>
+                <div class="container">
+                    <span><b>Password : </b><span name="error-password-register" class="red-text"></span></span>
+                    <input type="password" name="password-register" id="">
+                </div>
+                <div class="container">
+                    <b>Full Name : </b>
+                    <input type="text" id="" value="Anonymous Anonymous" name="fullname-register" disabled>
+                </div>
+                <div class="container">
+                    <b>Birth Date : </b>
+                    <input type="text" id="" value="2000-01-01" name="birthdate-register" disabled>
+                </div>
+                <div class="container">
+                    <b>Address : </b>
+                    <input type="text" id="" value="Jl. Nanas no.4, Jakarta Timur" name="address-register" disabled>
+                </div>
+                <div class="container">
+                    <b>Select a Role : </b>
+                    <select name="role-register">
+                    </select>
+                </div>
+                <div class="container">
+                    <b>Select a Join Period : </b>
+                    <select name="joinperiod-register">
+                    </select>
+                </div>
+                <div class="container">
+                    <input type="button" value="Register" class="btn" name="submit-register">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/index-script.js"></script>
+</body>
+</html>
