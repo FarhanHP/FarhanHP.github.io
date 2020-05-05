@@ -71,17 +71,7 @@ let cookie = getCookieAsJSON();
 
 //if cookie is empty then redirected to home
 if(typeof cookie.username === "undefined"){
-    let newLocation;
-    if(window.location.href.toString().includes("home.html")){
-        newLocation = window.location.href.toString().replace("pages/home.html", "");
-    }
-    else if(window.location.href.toString().includes("myguild.html")){
-        newLocation = window.location.href.toString().replace("pages/myguild.html", "");
-    }
-    else if(window.location.href.toString().includes("profile.html")){
-        newLocation = window.location.href.toString().replace("pages/profile.html", "");
-    }
-    window.location.href = newLocation;
+    window.location.href = "farhanhp.github.io";
 }
 
 
@@ -166,17 +156,7 @@ for(i of point){
 //event handler for logout
 document.getElementById("logout").addEventListener("click", function(){
     deleteCookie();
-    let newLocation;
-    if(window.location.href.toString().includes("home.html")){
-        newLocation = window.location.href.toString().replace("pages/home.html", "");
-    }
-    else if(window.location.href.toString().includes("myguild.html")){
-        newLocation = window.location.href.toString().replace("pages/myguild.html", "");
-    }
-    else if(window.location.href.toString().includes("profile.html")){
-        newLocation = window.location.href.toString().replace("pages/profile.html", "");
-    }
-    window.location.href = newLocation
+    window.location.href = "farhanhp.github.io"
 })
 //event handler for logout end
 
