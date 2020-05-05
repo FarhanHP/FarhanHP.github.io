@@ -71,7 +71,7 @@ let cookie = getCookieAsJSON();
 
 //if cookie is empty then redirected to home
 if(typeof cookie.username === "undefined"){
-    window.location.href = "farhanhp.github.io";
+    window.location.href = "http://farhanhp.github.io";
 }
 
 
@@ -156,7 +156,7 @@ for(i of point){
 //event handler for logout
 document.getElementById("logout").addEventListener("click", function(){
     deleteCookie();
-    window.location.href = "farhanhp.github.io"
+    window.location.href = "http://farhanhp.github.io"
 })
 //event handler for logout end
 
