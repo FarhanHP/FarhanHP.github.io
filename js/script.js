@@ -73,13 +73,13 @@ let cookie = getCookieAsJSON();
 if(typeof cookie.username === "undefined"){
     let newLocation;
     if(window.location.href.toString().includes("home.html")){
-        newLocation = window.location.href.toString().replace("pages/home.html", "index.html");
+        newLocation = window.location.href.toString().replace("pages/home.html", "");
     }
     else if(window.location.href.toString().includes("myguild.html")){
-        newLocation = window.location.href.toString().replace("pages/myguild.html", "index.html");
+        newLocation = window.location.href.toString().replace("pages/myguild.html", "");
     }
     else if(window.location.href.toString().includes("profile.html")){
-        newLocation = window.location.href.toString().replace("pages/profile.html", "index.html");
+        newLocation = window.location.href.toString().replace("pages/profile.html", "");
     }
     window.location.href = newLocation;
 }
@@ -168,13 +168,13 @@ document.getElementById("logout").addEventListener("click", function(){
     deleteCookie();
     let newLocation;
     if(window.location.href.toString().includes("home.html")){
-        newLocation = window.location.href.toString().replace("pages/home.html", "index.html");
+        newLocation = window.location.href.toString().replace("pages/home.html", "");
     }
     else if(window.location.href.toString().includes("myguild.html")){
-        newLocation = window.location.href.toString().replace("pages/myguild.html", "index.html");
+        newLocation = window.location.href.toString().replace("pages/myguild.html", "");
     }
     else if(window.location.href.toString().includes("profile.html")){
-        newLocation = window.location.href.toString().replace("pages/profile.html", "index.html");
+        newLocation = window.location.href.toString().replace("pages/profile.html", "");
     }
     window.location.href = newLocation
 })
