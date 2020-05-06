@@ -367,8 +367,21 @@ main article > div{
     flex-direction: column;
 }
 
+main article.quiz2{
+    flex-direction: column;
+}
+
+main article.quiz2 .col{
+    margin-bottom: 20px;
+    flex-direction: column;
+}
+
 main article > div div{
     display: flex;
+}
+
+main article.quiz2 > div > div p {
+    width: 100%;
 }
 
 main article h1{
