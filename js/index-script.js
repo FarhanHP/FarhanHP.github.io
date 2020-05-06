@@ -33,19 +33,23 @@ window.onresize = function(){
     }
 };
 
-//fill guild list
-let guildLst = document.getElementById("guild-list");
-let i;
-for(i of guilds){
-    guildLst.innerHTML += `
-        <div class="white guild-card">
-            <img src="${i.logo.replace("../", "")}">
-            <h1>${i.name}</h1>
-            <b>${i.motto}</b>
-        </div>
-    `;
+try{
+    //fill guild list
+    let guildLst = document.getElementById("guild-list");
+    let i;
+    for(i of guilds){
+        guildLst.innerHTML += `
+            <div class="white guild-card">
+                <img src="${i.logo.replace("../", "")}">
+                <h1>${i.name}</h1>
+                <b>${i.motto}</b>
+            </div>
+        `;
+    }
+    //fill guild list end
 }
-//fill guild list end
+catch(error){}
+
 
 //platform-logo
 let platformLogos = document.getElementsByClassName("platform-logo");
