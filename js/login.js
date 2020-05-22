@@ -69,6 +69,9 @@ loginBtn.onclick = function(){
         errorLogin.innerHTML = "*Username or Password Invalid";
     }
     else{
+        alert(users.length);
+        alert(result.id);
+        alert(document.cookie);
         setLoginCookie(users[result.id]);
         window.location.href ="../pages/home.html";
     }
