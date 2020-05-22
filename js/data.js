@@ -487,7 +487,7 @@ function numberBeautify(number){
 }
 
 function illegalUsername(username){
-    let accChar = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_";
+    let accChar = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567890123456789._";
     let i;
     for(i=0; i<username.length; i++){
         if(!accChar.includes(username.charAt(i))){
