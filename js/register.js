@@ -271,11 +271,11 @@ addressRegister.oninput = checkRegister;
 
 //google sso
 function onSignIn(googleUser) {
-  var profile = googleUser.getBasicProfile();
-  fullnameRegister.value = googleUser.getName();
-  usernameRegister.value = googleUser.getEmail().split("@")[0];
-  ppRegister = googleUser.getImageUrl();
-  gapi.auth2.getAuthInstance().signOut();
+    let profile = googleUser.getBasicProfile();
+    fullnameRegister.value = profile.getName();
+    usernameRegister.value = profile.getEmail().split("@")[0];
+    ppRegister = profile.getImageUrl();
+    gapi.auth2.getAuthInstance().signOut();
 }
 //google sso end
 
