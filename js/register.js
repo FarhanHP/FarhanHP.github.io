@@ -130,8 +130,8 @@ let checkRegister = function(){
         errorUsernameRegister.innerHTML = "*Invalid Username";
         submitRegister.disabled = true;
     }
-    else if(usernameRegister.value.length < 8 || usernameRegister.value.length > 15){
-        errorUsernameRegister.innerHTML = "*Only 8-15 Characters Allowed";
+    else if(usernameRegister.value.length < 8 || usernameRegister.value.length > 25){
+        errorUsernameRegister.innerHTML = "*Only 8-25 Characters Allowed";
         submitRegister.disabled = true;
     }
     //check username end
