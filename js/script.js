@@ -1,3 +1,9 @@
+//redirect if not login
+if(getCookie("login_id") === ""){
+    window.location.href = "../index.html"
+}
+
+
 //sticky
 let navbar = document.getElementsByTagName("nav")[0];
 let offsetTopNavbar = navbar.offsetTop;
@@ -66,32 +72,8 @@ document.getElementsByClassName("toggle-menu")[0].addEventListener("click", func
 });
 //event handler toggle-menu-btn end
 
-//always add cookie to users list
-let cookie = getCookieAsJSON();
-
-//if cookie is empty then redirected to home
-if(typeof cookie.username === "undefined"){
-    window.location.replace("https://farhanhp.github.io");
-}
-
-
-if(users.length <= cookie.nik){
-    //untuk mencegah perbedaan antara nik dan index di array karena pendaftaran lebih dari sekali
-    cookie.nik = users.length;
-    users.push(cookie); 
-}
-else{
-    //update data di list sesuai cookie
-    let i;
-    for(i in cookie){
-        users[cookie.nik][i] = cookie[i];
-    }
-}
-
-updateData(guilds, users);  
-
 //filling information
-let loggedUser = users[Number(cookie.nik)];
+let loggedUser = getLoginCookie();
 
 let username = document.getElementsByName("username");
 for(i of username){
@@ -155,9 +137,7 @@ for(i of point){
 
 //event handler for logout
 document.getElementById("logout").addEventListener("click", function(){
-    deleteCookie();
-    window.location.replace("https://farhanhp.github.io")
+    deleteLoginCookie();
+    window.location.href = "../index.html";
 })
 //event handler for logout end
-
-setCookieFromJSON(loggedUser);

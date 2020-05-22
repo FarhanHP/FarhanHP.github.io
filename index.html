@@ -22,7 +22,7 @@
         <nav class="yellow accent-4">
             <div class="nav-wrapper homepage">
                 <div class="toggle-menu hide-on-med-and-up">
-                    <img src="../img/toggle-menu-btn.png">
+                    <img src="img/toggle-menu-btn.png">
                 </div>
                 <ul class="center-align yellow accent-4 hide-on-small-only">
                     <li>
@@ -38,7 +38,7 @@
                         <a href="pages/quiz2.html"><b>Quiz 2</b></a>
                     </li>
                     <li>
-                        <a class="login-btn"><b>Login</b></a>
+                        <a href="pages/login.html"><b>Login</b></a>
                     </li>
                 </ul>
             </div>
@@ -107,18 +107,26 @@
             <h3 class="center-align">Choose a Platform to Register</h3>
             <div>
                 <div class="platform-logo-container">
-                    <img class="platform-logo" src="img/platform-logo/facebook-grey.png">
+                    <a href="pages/register.html">
+                        <img class="platform-logo" src="img/platform-logo/facebook-grey.png">
+                    </a>
                 </div>
 
                 <div class="platform-logo-container">
-                    <img class="platform-logo" src="img/platform-logo/github-grey.png">
+                    <a href="pages/register.html">
+                        <img class="platform-logo" src="img/platform-logo/github-grey.png">
+                    </a>
                 </div>
 
                 <div class="platform-logo-container">
-                    <img class="platform-logo" src="img/platform-logo/twitter-grey.png">
+                    <a href="pages/register.html">
+                        <img class="platform-logo" src="img/platform-logo/twitter-grey.png">
+                    </a>
                 </div>
                 <div class="platform-logo-container">
-                    <img class="platform-logo" src="img/platform-logo/google-grey.png">
+                    <a href="pages/register.html">
+                        <img class="platform-logo" src="img/platform-logo/google-grey.png">
+                    </a>
                 </div>
             </div>
         </article>
@@ -130,86 +138,8 @@
         </div>
     </footer>
 
-    <div class="modal-container" id="login">
-        <div class="yellow accent-4 modal-content">
-            <div class="close-modal-container">
-                <div class="close-modal">
-                    &times;
-                </div>
-            </div>
-            <h1 class="black">Login</h1>
-            <form action="" class="black">
-                <div class="container">
-                    <b>Username : </b>
-                    <input type="text" name="username-login">
-                </div>
-                <div class="container">
-                    <b>Password : </b>
-                    <input type="password" name="password-login">
-                </div>
-                <p class="center-align red-text" name="error-login"></p>
-                <div class="container">
-                    <input type="button" value="Log In" class="btn" name="submit-login">
-                </div>
-                <div class="container">
-                    <p class="center-align">Don't have an account ? <a href="#join" class="close-modal">Register</a></p>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <div class="modal-container" id="register">
-        <div class="yellow accent-4 modal-content">
-            <div class="close-modal-container">
-                <div class="close-modal">
-                    &times;
-                </div>
-            </div>
-            <h1 class="black">Register</h1>
-            <form action="" class="black">
-                <div class="container">
-                    <span><b>Username : </b><span name="error-username-register" class="red-text"></span></span>
-                    <input type="text" name="username-register" id="" value="anonymous">
-                </div>
-                <div class="container">
-                    <span><b>Password : </b><span name="error-password-register" class="red-text"></span></span>
-                    <input type="password" name="password-register" id="">
-                </div>
-                <div class="container">
-                    <b>NIK : </b>
-                    <input type="text" id="" value="923000123016" name="nik" disabled>
-                </div>
-                <div class="container">
-                    <b>Full Name : </b>
-                    <input type="text" id="" value="Anonymous Anonymous" name="fullname-register" disabled>
-                </div>
-                <div class="container">
-                    <b>Birth Date : </b>
-                    <input type="text" id="" value="2000-01-01" name="birthdate-register" disabled>
-                </div>
-                <div class="container">
-                    <b>Address : </b>
-                    <input type="text" id="" value="Jl. Nanas no.4, Jakarta Timur" name="address-register" disabled>
-                </div>
-                <div class="container">
-                    <b>Select a Role : </b>
-                    <select name="role-register">
-                    </select>
-                </div>
-                <div class="container">
-                    <b>Select a Join Period : </b>
-                    <select name="joinperiod-register">
-                    </select>
-                </div>
-                <div class="container">
-                    <input type="button" value="Register" class="btn" name="submit-register">
-                </div>
-            </form>
-        </div>
-    </div>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="js/data.js"></script>
-    <script src="js/index-script.js"></script>
+    <script src="js/index.js"></script>
 </body>
 </html>

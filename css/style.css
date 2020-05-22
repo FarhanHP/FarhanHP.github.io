@@ -124,6 +124,11 @@ header figcaption{
     padding: 5px;
 }
 
+.platform-logo-container a{
+    display: flex;
+    width: 100%;
+}
+
 .platform-logo {
     display: flex;
     width: 100%;
@@ -340,8 +345,13 @@ header figcaption{
 .separator::before, .separator::after {
     content: '';
     flex: 1;
-    border-bottom: 1px solid black; /*yellow acent 4*/;
+    border-bottom: 1px solid black; 
 }
+
+.white-text.separator::before, .white-text.separator::after{
+    border-bottom: 1px solid white;
+}
+
 .separator::before{
     margin-right: 5px;
 }
@@ -590,19 +600,6 @@ a.close-modal:hover{
     font-size: 20px;
 }
 
-#register .container{
-    margin: 0 auto;
-}
-
-#register input:disabled{
-    color: white;
-}
-
-#register select{
-    margin: 10px 0;
-    display: flex;
-}
-
 #join > div{
     flex-direction: row;
 }
@@ -741,10 +738,11 @@ a.close-modal:hover{
 }
 
 .skillset-window{
-    display: flex;
+    border-radius: 5px;
+    margin: 20px 5px;
     padding: 20px;
-    height: 100%;
-    width: 100%;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+    display: flex;
     flex-direction: column;
 }
 
@@ -810,8 +808,104 @@ a.close-modal:hover{
     font-weight: bolder;
 }
 
+#register-page{
+    display: flex;
+}
+
+#register-page .guildhub-logo{
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+}
+
+#register-page .guildhub-logo figcaption{
+    font-size: 30px;
+    font-weight: bolder;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+#register-page > div{
+    flex: 1;
+    display: flex;
+    padding: 40px 5px;
+}
+
+#register-page #register{
+    display: flex;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+    padding: 40px;
+    flex-direction: column;
+}
+
+#register-page #register .ktp{
+    padding: 20px 0;
+}
+
+#register-page #register h2{
+    margin-bottom: 50px;
+}
+
+#register-page #register .btn{
+    margin: 20px 0;
+}
+
+#register-page #register .material-icons-container{
+    display: flex;
+}
+
+#register-page #register .material-icons{
+    display: flex;
+    margin: auto;
+}
+
+#register-page #register .material-icons:hover{
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+#register-page input{
+    color: white;
+}
+
+#register-page #register > div{
+    display: flex;
+    flex-direction: column;
+}
+
+#register-page #register > div > div{
+    flex: 1;
+    margin-right: 10px;
+}
+
+#register-page #register > div input{
+    margin-right: 20px;
+}
+
+#register-page #register input:disabled{
+    color: white;
+}
+
+#register-page #register select{
+    margin: 10px 0;
+    display: flex;
+}
+
+#register-page #register .password-container{
+    display: flex;
+    flex-direction: column;
+}
+
+#register-page #register .input-container{
+    display: flex;
+}
+
 /*Medium Screen*/
 @media screen and (min-width: 601px){
+    #register-page > div{
+        padding: 40px;
+    }
     .nav-wrapper #logout img{
         width: 100%;
     }
@@ -842,12 +936,12 @@ a.close-modal:hover{
 
 /*Large Screen*/
 @media screen and (min-width: 993px){
-    .user-card{
-        width: 45%;
-    }
-
     .platform-logo{
         width: 50%;
+    }
+
+    .user-card{
+        width: 45%;
     }
     
     .modal-content{
@@ -897,6 +991,14 @@ a.close-modal:hover{
     }
 
     main article > div{
+        flex-direction: row;
+    }
+
+    #register-page{
+        flex-direction: row;
+    }
+
+    #register-page #register > div{
         flex-direction: row;
     }
 }
