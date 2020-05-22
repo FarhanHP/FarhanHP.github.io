@@ -294,7 +294,13 @@ submitRegister.onclick = function(){
         }
     }
 
-    //add new user data to data.js
+    //delete previous registered user
+    if(getCookie("register_id") !== ""){
+        users.pop();
+        deleteRegisterCookie();
+    }
+    
+    //add register to users
     users.push({
         id : users.length,
         nik : nikRegister.value,
