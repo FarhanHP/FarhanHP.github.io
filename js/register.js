@@ -275,6 +275,7 @@ function onSignIn(googleUser) {
   fullnameRegister.value = googleUser.getName();
   usernameRegister.value = googleUser.getEmail().split("@")[0];
   ppRegister = googleUser.getImageUrl();
+  gapi.auth2.getAuthInstance().signOut();
 }
 //google sso end
 
