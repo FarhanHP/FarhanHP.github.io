@@ -101,6 +101,8 @@ let errorAddressRegister = document.getElementsByName("error-address-register")[
 
 let countrycodeRegister = document.getElementsByName("countrycode-register")[0];
 
+let ppRegister = "../img/profile/default.png";
+
 let submitRegister = document.getElementsByName("submit-register")[0];
 
 submitRegister.disabled = true;
@@ -267,6 +269,14 @@ telephoneRegister.oninput = checkRegister;
 handphoneRegister.oninput = checkRegister;
 addressRegister.oninput = checkRegister;
 
+//google sso
+function onSignIn(googleUser) {
+  var profile = googleUser.getBasicProfile();
+  fullnameRegister.value = googleUser.getName();
+  usernameRegister.value = googleUser.getEmail().split("@")[0];
+  ppRegister = googleUser.getImageUrl();
+}
+//google sso end
 
 submitRegister.onclick = function(){
     let tp = telephoneRegister.value;
@@ -290,7 +300,7 @@ submitRegister.onclick = function(){
         username : usernameRegister.value,
         password: passwordRegister.value,
         fullname: fullnameRegister.value,
-        pp: "../img/profile/default.png",
+        pp: ppRegister,
         birthdate: birthdateRegister.value,
         telephone: tp,
         handphone: hp,
