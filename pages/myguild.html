@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../img/guildhub-logo.png">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <title>GuildHub</title>
@@ -100,8 +101,20 @@
                                 <div class="col s1 center-align">
                                     &nbsp;:&nbsp;
                                 </div>
-                                <div class="col s8">
+                                <div class="col s7">
                                     <p name="rank"></p>
+                                </div>
+                                <div class="col s1">
+                                    <i class="material-icons rank-up">keyboard_arrow_down</i>
+                                </div>
+                            </div>
+
+                            <div class="rank-up-bar hide">
+                                <div class="col s10 progress white">
+                                    <div class="blue" name="progress"></div>
+                                </div>
+                                <div class="col s1 offset-s1 material-icons-container">
+                                    <i class="material-icons grey-text">check</i>
                                 </div>
                             </div>
         
@@ -204,6 +217,29 @@
                                 <div class="btn yellow accent-4" name="guild-jobs-create"><p>Create a Job</p></div>
                             </div>
                         </div>
+
+                        <div class="create-job-window yellow accent-4 hide">
+                            <form action="" class="white">
+                                <p><b>Task : </b></p>
+                                <input type="text" name="" id="" placeholder="Task">
+                                <p><b>Min-Rank : </b></p>
+                                <select name="min-rank" id="select-min-rank">
+                                    <option value="IRON">IRON</option>
+                                    <option value="BRONZE">BRONZE</option>
+                                    <option value="SILVER">SILVER</option>
+                                    <option value="GOLD">GOLD</option>
+                                    <option value="PLATINUM">PLATINUM</option>
+                                </select>
+                                <p><b>Reward : </b></p>
+                                <input type="text" name="" id="" placeholder="Reward">
+                                <p><b>Deadline : </b></p>
+                                <input type="date" name="" id="">
+                                <div class="btn-container">
+                                    <input type="button" value="Submit" class="btn yellow accent-4 disabled">
+                                    <input type="button" value="Cancel" class="btn red accent-4" name="cancel-create-job">
+                                </div>
+                            </form>
+                        </div>
         
                         <div id="guild-jobs">
                         </div>
@@ -265,19 +301,6 @@
             <b class="white-text">Copyright &copy; 2020 Farhan Herdian Pradana</b>
         </div>
     </footer>
-
-    <div class="modal-container" id="guild-jobs-create-window">
-        <div class="yellow accent-4 modal-content">
-            <div class="close-modal-container">
-                <div class="close-modal">
-                    &times;
-                </div>
-            </div>
-            <div style="display: flex; flex: 1; margin: 10px" class="white">
-                <h1 class="black-text" style="display: flex; margin: auto">Coming Soon</h1>
-            </div>
-        </div>
-    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="../js/data.js"></script>

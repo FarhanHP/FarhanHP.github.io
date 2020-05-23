@@ -141,3 +141,40 @@ document.getElementById("logout").addEventListener("click", function(){
     window.location.href = "../index.html";
 })
 //event handler for logout end
+
+//event handler for rankUp arrow
+let rankUps = document.getElementsByClassName("rank-up");
+let rankUpBars = document.getElementsByClassName("rank-up-bar");
+
+for(i=0; i<rankUps.length; i++){
+    let j = i;
+    rankUps[i].onclick = function(){
+        if(this.innerHTML === "keyboard_arrow_up"){
+            this.innerHTML = "keyboard_arrow_down";
+            rankUpBars[j].classList.add("hide");
+        }
+        else{
+            this.innerHTML = "keyboard_arrow_up";
+            rankUpBars[j].classList.remove("hide");
+        }
+    }
+}
+//event handler for rankUp arrow end
+
+//rank progress
+let progresses = document.getElementsByName("progress");
+for(i of progresses){
+    if(loggedUser.rank === "IRON"){
+        i.style.width = `${loggedUser.point/5000*100}%`;
+    }
+    else if(loggedUser.rank === "BRONZE"){
+        i.style.width = `${(loggedUser.point-5000)/10000*100}%`;
+    }
+    else if(loggedUser.rank === "SILVER"){
+        i.style.width = `${(loggedUser.point-15000)/35000*100}%`;
+    }
+    else{
+        i.style.width = `${(loggedUser.point-50000)/100000*100}%`;
+    }
+}
+//rank progress end

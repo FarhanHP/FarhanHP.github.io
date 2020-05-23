@@ -64,3 +64,18 @@ for(i of platformLogos){
 }
 //platform-logo end
 
+//FAQ
+let faqs = document.getElementsByClassName("faq");
+let faqscontent = document.getElementsByClassName("faq-content");
+for(i=0; i<faqs.length; i++){
+    let j = i;
+    faqs[i].onclick = function(){
+        if(faqscontent[j].classList.contains("hide")){
+            faqscontent[j].classList.remove("hide");
+        }
+        else{
+            faqscontent[j].classList.add("hide");
+        }
+    }
+}
+//FAQ end

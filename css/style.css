@@ -482,8 +482,10 @@ main article p {
     display: flex;
     flex-direction: column;
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
-    margin: 20px;
-    flex: 1;
+    margin: 20px auto;
+    width: 100%;
+    border-radius: 5px;
+    overflow: hidden;
 }
 
 .guild-card:hover{
@@ -562,7 +564,6 @@ main article p {
     display: flex;
     margin: 100px auto;
     width: 90%;
-    height: 80%;
     flex-direction: column;
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
 }
@@ -598,6 +599,10 @@ a.close-modal:hover{
 
 #about p{
     font-size: 20px;
+}
+
+#about i{
+    padding: 5px;
 }
 
 #join > div{
@@ -901,6 +906,165 @@ a.close-modal:hover{
     display: flex;
 }
 
+.rank-up{
+    border: 1px solid black;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.75);
+}
+
+.rank-up:hover{
+    cursor: pointer;
+    box-shadow: none;
+}
+
+.rank-up-bar{
+    display: flex;
+}
+
+.rank-up-bar .materials-icons-container{
+    display: flex;
+}
+
+.rank-up-bar .material-icons{
+    height: 20px;
+}
+
+.rank-up-bar .progress{
+    border-radius: 5px;
+    overflow: hidden;
+    height: 20px;
+    display: flex;
+    border : 1px solid black;
+}
+
+.rank-up-bar .progress .blue{
+    display: flex;
+    margin: auto 0;
+    height: 100%;
+}
+
+.create-job-window{
+    margin: 20px 0px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+}
+
+.create-job-window form{
+    padding: 20px;
+}
+
+.create-job-window form .btn-container{
+    display: flex;
+}
+
+.create-job-window form .btn{
+    width: 30%;
+}
+
+.create-job-window select{
+    display: flex;
+}
+
+.profile-card-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.profile-card{
+    width: 100%;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+    display: flex;
+    flex-direction: column-reverse;
+    margin: 10px auto;
+}
+
+.profile-card:hover{
+    box-shadow: none;
+}
+
+.profile-card p{
+    padding: 0;
+    width: 100%;
+}
+
+.profile-card .info{
+    display: flex;
+    flex-direction: column;
+    width: 100%
+}
+
+.profile-card .img-container{
+    display: flex;
+    width: 100%;
+}
+
+.profile-card .img-container img{
+    margin: auto;
+    display: flex;
+    border-radius: 50%;
+}
+
+.guildhub-contact{
+    display: flex;
+    margin: 40px 0;
+}
+
+.guildhub-contact .img-container{
+    width: 50%;
+}
+
+.guildhub-contact .img-container img{
+    border-radius: 50%;
+    width: 50%;
+}
+
+.guildhub-contact .contact{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.guildhub-contact p{
+    width: 100%;
+    padding: 5px;
+}
+
+#faq h1{
+    margin-bottom: 40px;
+}
+
+.faq-container{
+    display: block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+}
+
+.faq{
+    font-size: 20px;
+    display: block;
+    padding: 0;
+    width: 100%;
+}
+
+.faq:hover{
+    cursor: pointer;
+    color: #ffd600;;
+}
+
+.faq-content{
+    display: block;
+    padding: 0;
+    font-size: 18px;
+    width: 100%;
+    padding: 0 20px;
+}
+
+
 /*Medium Screen*/
 @media screen and (min-width: 601px){
     #register-page > div{
@@ -931,6 +1095,26 @@ a.close-modal:hover{
 
     .platform-logo-container{
         padding: 40px;
+    }
+
+    .profile-card-container{
+        flex-direction: row;
+    }
+
+    .profile-card{
+        width: 45%;
+    }
+
+    .guild-card{
+        width: 30%
+    }
+
+    .guildhub-contact{
+        flex-direction: row;
+    }
+
+    .guildhub-contact .contact{
+        width: 50%;
     }
 }
 
@@ -1000,5 +1184,13 @@ a.close-modal:hover{
 
     #register-page #register > div{
         flex-direction: row;
+    }
+
+    .profile-card{
+        width: 30%;
+    }
+
+    .guild-card{
+        width: 25%
     }
 }

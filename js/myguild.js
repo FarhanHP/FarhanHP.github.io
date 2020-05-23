@@ -153,13 +153,17 @@ else{
     //guild jobs filter event handler end
 
     //guild jobs create event handler
-    let guildJobsCreate = document.getElementsByName("guild-jobs-create");
-    let guildJobsCreateWindow = document.getElementById("guild-jobs-create-window");
-    for(i of guildJobsCreate){
-        i.addEventListener("click", function(){
-            guildJobsCreateWindow.style.display = "flex";
-        })
+    let guildJobsCreateWindow = document.getElementsByClassName("create-job-window")[0];
+    document.getElementsByName("guild-jobs-create")[0].onclick = function(){
+        this.classList.add("hide")
+        guildJobsCreateWindow.classList.remove("hide");
     }
+
+    document.getElementsByName("cancel-create-job")[0].onclick = function(){
+        document.getElementsByName("guild-jobs-create")[0].classList.remove("hide")
+        guildJobsCreateWindow.classList.add("hide");
+    }
+
     //guild jobs create event handler end
     //guild jobs end
 

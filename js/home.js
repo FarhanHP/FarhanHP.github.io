@@ -232,7 +232,7 @@ for(i=0; i<guilds.length; i++){
 //guilds end
 
 //choose skillset window appear when the user has null skillset
-if(loggedUser.skillset === null){
+if(loggedUser.skillset === null && !loggedUser.isManager){
     document.getElementsByClassName("guild-profile")[0].classList.add("hide");
     document.getElementsByClassName("guild-content")[0].classList.add("hide");
 
@@ -274,7 +274,7 @@ if(loggedUser.skillset === null){
         document.getElementById("choosen-skillset").innerHTML = "";
         let i;
         for(i of loggedUser.skillset){
-            let id = "unchoose-skillset-"+i.replace(" ", "-");
+            let id = "unchoose-skillset-"+i.replace(/ /g, "-");
             document.getElementById("choosen-skillset").innerHTML += `
                 <div class="skillset-card grey white-text">
                     <div id=${id}>&times;</div><p>${i}</p>
@@ -284,9 +284,9 @@ if(loggedUser.skillset === null){
 
         //event handler for removing skillset
         for(i of skillset){
-            if(document.getElementById("unchoose-skillset-"+i.replace(" ", "-")) !== null){
-                document.getElementById("unchoose-skillset-"+i.replace(" ", "-")).addEventListener("click", function(){
-                    removeUserSkillset(loggedUser, this.id.toString().replace("unchoose-skillset-", "").replace("-", " "));
+            if(document.getElementById("unchoose-skillset-"+i.replace(/ /g, "-")) !== null){
+                document.getElementById("unchoose-skillset-"+i.replace(/ /g, "-")).addEventListener("click", function(){
+                    removeUserSkillset(loggedUser, this.id.toString().replace("unchoose-skillset-", "").replace(/-/g, " "));
                     updateSkillsetWindow();
                 })
             }
