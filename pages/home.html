@@ -29,7 +29,7 @@
                     <li>
                         <a class="visiting"><b>Home</b></a>
                     </li>
-                    <li>
+                    <li class="non-admin">
                         <a href="myguild.html"><b>My Guild</b></a>
                     </li>
                     <li>
@@ -53,7 +53,7 @@
                         <figure>
                             <img name="pp" src=""></img>
                         </figure>
-                        <div>
+                        <div class="non-admin">
                             <div class="separator">General</div>
                             
                             <div class="row">
@@ -130,6 +130,13 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="admin">
+                            <h1>&lt; Manager &gt;</h1>
+                            <hr>
+                            <p><i class="material-icons">account_circle</i><span name="fullname"></span></p>
+                            <p><i class="material-icons">call</i><span name="handphone"></span></p>
+                        </div>
                     </div>
                 </div>
             </aside>
@@ -157,7 +164,7 @@
 
 
             <!--job taken-->
-            <div class="guild-profile yellow accent-4">
+            <div class="guild-profile yellow accent-4 non-admin">
                 <h1>Job Taken</h1>
                 <div class="white" id="job-taken">
                     
@@ -205,7 +212,7 @@
                             </form>
                         </div>
                         <div class="col s12 m6">
-                            <div class="btn disabled"><p>Create a Guild</p></div>
+                            <div class="btn disabled non-admin"><p>Create a Guild</p></div>
                         </div>
                     </div>
     

@@ -75,6 +75,23 @@ document.getElementsByClassName("toggle-menu")[0].addEventListener("click", func
 //filling information
 let loggedUser = getLoginCookie();
 
+
+//remove non admin content
+if(loggedUser.isManager){
+    let nonAdminContents = document.getElementsByClassName("non-admin");
+    let i;
+    for(i of nonAdminContents){
+        i.style.display = "none";
+    }
+}
+else{
+    let adminContents = document.getElementsByClassName("admin");
+    let i;
+    for(i of adminContents){
+        i.style.display = "none";
+    }
+}
+
 let username = document.getElementsByName("username");
 for(i of username){
     i.innerHTML = loggedUser.username;
@@ -132,6 +149,16 @@ for(i of rank){
 let point = document.getElementsByName("point");
 for(i of point){
     i.innerHTML = numberBeautify(loggedUser.point);
+}
+
+let handphone = document.getElementsByName("handphone");
+for(i of handphone){
+    i.innerHTML = loggedUser.handphone
+}
+
+let fullname = document.getElementsByName("fullname");
+for(i of fullname){
+    i.innerHTML = loggedUser.fullname;
 }
 //filling information end
 

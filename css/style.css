@@ -61,20 +61,6 @@ header figcaption{
     flex: 4;
 }
 
-.nav-wrapper #logout{
-    flex: 1;
-}
-
-.nav-wrapper #logout a{
-    padding: 5px;
-}
-
-.nav-wrapper #logout img{
-    width: 10%;
-    display: flex;
-    margin: auto;
-}
-
 .nav-wrapper li a {
     display: flex;
     width: 100%;
@@ -84,6 +70,20 @@ header figcaption{
 
 .nav-wrapper li img{
     width: 25%;
+}
+
+.nav-wrapper #logout{
+    flex: 1;
+}
+
+.nav-wrapper #logout img{
+    display: flex;
+    margin: auto;
+    width: 30px;
+}
+
+.nav-wrapper #logout a{
+    padding: 0;
 }
 
 .nav-wrapper a.visiting{
@@ -258,6 +258,19 @@ header figcaption{
 .information .col, .information .row{
     margin:0;
     padding: 0;
+}
+
+.information p{
+    display: flex;
+}
+
+.information i{
+    padding: 10px;
+}
+
+.information span{
+    display: flex;
+    margin: auto 0;
 }
 
 .information, .guild-profile{
@@ -1069,9 +1082,6 @@ a.close-modal:hover{
 @media screen and (min-width: 601px){
     #register-page > div{
         padding: 40px;
-    }
-    .nav-wrapper #logout img{
-        width: 100%;
     }
     .user-card{
         width: 30%;

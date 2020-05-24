@@ -1,4 +1,3 @@
-document.getElementsByName("fullname")[0].innerHTML = loggedUser.fullname;
 document.getElementsByName("birthdate")[0].innerHTML = loggedUser.birthdate;
 document.getElementsByName("rank-number")[0].innerHTML = "#"+loggedUser.rankNumber;
 
@@ -20,5 +19,4 @@ else{
     document.getElementsByName("telephone")[0].innerHTML = loggedUser.telephone;
 }
 
-document.getElementsByName("handphone")[0].innerHTML = loggedUser.handphone;
 document.getElementsByName("address")[0].innerHTML = loggedUser.address;

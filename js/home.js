@@ -163,7 +163,10 @@ function showGuilds(keyword=""){
     for(i of selectedGuilds){
         let btn;
         let id = `guild-${i.no}`;
-        if(loggedUser.guild === null){
+        if(loggedUser.isManager){
+            btn = `<div id="${id}" class="btn"><b>Detail<b></btn>`;;
+        }
+        else if(loggedUser.guild === null){
             btn = `<div id="${id}" class="btn"><b>Join<b></btn>`;
         }
         else if(loggedUser.guild.no === i.no){
