@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../img/guildhub-logo.png">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/profile-style.css">
+    <title>GuildHub</title>
+</head>
+<body class="grey lighten-3">
+    <header class="black">
+        <figure>
+            <div class="row">
+                <img src="../img/guildhub-logo.png" alt="" class="col m2 s6 offset-m5 offset-s3">
+            </div>
+            <div class="row">
+                <figcaption class="white-text col m2 s6 offset-m5 offset-s3 center-align">GuildHub</figcaption>
+            </div>
+        </figure>
+
+        <nav class="yellow accent-4">
+            <div class="nav-wrapper">
+                <div class="toggle-menu hide-on-med-and-up">
+                    <img src="../img/toggle-menu-btn.png">
+                </div>
+                <ul class="center-align yellow accent-4">
+                    <li>
+                        <a href="home.html"><b>Home</b></a>
+                    </li>
+                    <li class="non-admin">
+                        <a href="myguild.html"><b>My Guild</b></a>
+                    </li>
+                    <li>
+                        <a class="visiting"><b>Profile</b></a>
+                    </li>
+                    <li id="logout">
+                        <a><img src="../img/logout-btn.png" alt="" srcset=""></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="row">
+        <!--user profile-->
+        <div class="col s12 l3">
+            <aside class="information yellow accent-4">
+                <h1 name="username"></h1>
+                <div class="white">
+                    <div>
+                        <figure>
+                            <img name="pp" src=""></img>
+                        </figure>
+                        <div class="non-admin">
+                            <div class="separator">General</div>
+                            
+                            <div class="row">
+                                <div class="col s3">
+                                    <p>Role</p>
+                                </div>
+                                <div class="col s1 center-align">
+                                &nbsp;:&nbsp;
+                                </div>
+                                <div class="col s8">
+                                    <p name="role"></p>
+                                </div>
+                            </div>
+    
+                            <div class="row">
+                                <div class="col s3">
+                                    <p>Gold</p>
+                                </div>
+                                <div class="col s1 center-align">
+                                &nbsp;:&nbsp;
+                                </div>
+                                <div class="col s8">
+                                    <p name="gold"></p>
+                                </div>
+                            </div>
+    
+                            <div class="separator">Guild</div>
+    
+                            <div class="row">
+                                <div class="col s3">
+                                    <p>Guild</p>
+                                </div>
+                                <div class="col s1 center-align">
+                                    &nbsp;:&nbsp;
+                                </div>
+                                <div class="col s8">
+                                    <p class="blue-text" name="guild"></p>
+                                </div>
+                            </div>
+                
+                            <div class="row">
+                                <div class="col s3">
+                                    <p>Rank</p>
+                                </div>
+                                <div class="col s1 center-align">
+                                    &nbsp;:&nbsp;
+                                </div>
+                                <div class="col s7">
+                                    <p name="rank"></p>
+                                </div>
+                                <div class="col s1">
+                                    <i class="material-icons rank-up">keyboard_arrow_down</i>
+                                </div>
+                            </div>
+
+                            <div class="rank-up-bar hide">
+                                <div class="col s10 progress white">
+                                    <div class="blue" name="progress"></div>
+                                </div>
+                                <div class="col s1 offset-s1 material-icons-container">
+                                    <i class="material-icons grey-text">check</i>
+                                </div>
+                            </div>
+        
+                            <div class="row">
+                                <div class="col s3">
+                                    <p>Point</p>
+                                </div>
+                                <div class="col s1 center-align">
+                                    &nbsp;:&nbsp;
+                                </div>
+                                <div class="col s8">
+                                    <p name="point"></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="admin">
+                            <h1>&lt; Manager &gt;</h1>
+                            <hr>
+                            <p><i class="material-icons">account_circle</i><span name="fullname"></span></p>
+                            <p><i class="material-icons">call</i><span name="handphone"></span></p>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+        <div class="content col s12 l6">
+            <div class="yellow accent-4 user-profile">
+                <div class="img-container">
+                    <img name="pp" alt="">
+                </div>
+                <div class="h-container">
+                    <h2 class="center-align white-text" name="username"></h2>
+                    <h4 class="center-align white-text" name="fullname"></h4>
+                </div>
+                <div class="row">
+                    <div class="col s10 m8 offset-s1 offset-m2 white personal-information">
+                        <div class="row non-admin">
+                            <div class="col s6">
+                                <b>Role</b>
+                            </div>
+                            <div class="col s6">
+                                <p name="role"></p>
+                            </div>
+                        </div>
+                        <div class="row non-admin">
+                            <div class="col s6">
+                                <b>Point</b>
+                            </div>
+                            <div class="col s6">
+                                <p name="point"></p>
+                            </div>
+                        </div>
+                        <div class="row non-admin">
+                            <div class="col s6">
+                                <b>Gold</b>
+                            </div>
+                            <div class="col s6">
+                                <p name="gold"></p>
+                            </div>
+                        </div>
+                        <div class="row non-admin">
+                            <div class="col s6">
+                                <b>Rank</b>
+                            </div>
+                            <div class="col s5">
+                                <p name="rank"></p>
+                            </div>
+                            <div class="col s1">
+                                <i class="material-icons rank-up">keyboard_arrow_down</i>
+                            </div>
+                        </div>
+
+                        <div class="rank-up-bar hide">
+                            <div class="col s10 progress white">
+                                <div class="blue" name="progress"></div>
+                            </div>
+                            <div class="col s1 offset-s1 material-icons-container">
+                                <i class="material-icons grey-text">check</i>
+                            </div>
+                        </div>
+                        
+                        <div class="row non-admin">
+                            <div class="col s6">
+                                <b>Rank Number</b>
+                            </div>
+                            <div class="col s6">
+                                <p name="rank-number"></p>
+                            </div>
+                        </div>
+                        <div class="row non-admin">
+                            <div class="col s6">
+                                <b>Guild</b>
+                            </div>
+                            <div class="col s6">
+                                <p class="blue-text" name="guild"></p>
+                            </div>
+                        </div>
+                        <div class="row non-admin">
+                            <div class="col s6">
+                                <b>Skillset</b>
+                            </div>
+                            <div class="col s6">
+                                <p name="skillset"></p>
+                            </div>
+                        </div>
+                        <div class="separator non-admin">Personal Information</div>
+                        <div class="row">
+                            <div class="col s6">
+                                <b>NIK</b>
+                            </div>
+                            <div class="col s6">
+                                <p name="nik"></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s6">
+                                <b>Birth Date</b>
+                            </div>
+                            <div class="col s6">
+                                <p name="birthdate"></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s6">
+                                <b>Telephone</b>
+                            </div>
+                            <div class="col s6">
+                                <p name="telephone"></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s6">
+                                <b>Handphone</b>
+                            </div>
+                            <div class="col s6">
+                                <p name="handphone"></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s6">
+                                <b>Address</b>
+                            </div>
+                            <div class="col s6">
+                                <p name="address"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="yellow accent-4">
+        <div class="container center-align">
+            <b class="white-text">Copyright &copy; 2020 Farhan Herdian Pradana</b>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="../js/data.js"></script>
+    <script src="../js/script.js"></script>
+    <script src="../js/profile.js"></script>
+</body>
+</html>
