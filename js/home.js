@@ -68,21 +68,37 @@ let usersWindow = document.getElementById("users-window");
 let usersWindowBtn = document.getElementById("users-window-btn");
 let guildsWindow = document.getElementById("guilds-window");
 let guildsWindowBtn = document.getElementById("guilds-window-btn");
+let jobsWindow = document.getElementById("jobs-window");
+let jobsWindowBtn = document.getElementById("jobs-window-btn");
 
 usersWindowBtn.addEventListener("click", function(){
     usersWindow.style.display = "block";
     guildsWindow.style.display = "none";
+    jobsWindow.style.display = "none";
 
     this.classList.add("visiting");
     guildsWindowBtn.classList.remove("visiting");
+    jobsWindowBtn.classList.remove("visiting");
 });
 
 guildsWindowBtn.addEventListener("click", function(){
     usersWindow.style.display = "none";
     guildsWindow.style.display = "block";
+    jobsWindow.style.display = "none";
 
     this.classList.add("visiting");
     usersWindowBtn.classList.remove("visiting");
+    jobsWindowBtn.classList.remove("visiting");
+});
+
+jobsWindowBtn.addEventListener("click", function(){
+    usersWindow.style.display = "none";
+    guildsWindow.style.display = "none";
+    jobsWindow.style.display = "block";
+
+    this.classList.add("visiting");
+    usersWindowBtn.classList.remove("visiting");
+    guildsWindowBtn.classList.remove("visiting");
 });
 
 //guild content nav event handler end
@@ -214,7 +230,7 @@ for(i of guildsFilter){
 for(i=0; i<guilds.length; i++){
     try{
         document.getElementById(`guild-${i}`).addEventListener("click", function(){
-            if(loggedUser.guild === null){
+            if(loggedUser.guild === null || loggedUser.isManager){
                 loggedUser.guild = guilds[Number(this.id.replace("guild-", ""))];
                 setLoginCookie(loggedUser);
                 updateData();
@@ -233,6 +249,68 @@ for(i=0; i<guilds.length; i++){
 }
 //event handler for join guild button end
 //guilds end
+
+//jobs
+function showJobs(keyword=""){
+    let jobsElement = document.getElementById("jobs");
+    jobsElement.innerHTML = "";
+
+    let i;
+    for(i of jobs){
+        if(i.task.toLowerCase().includes(keyword.toLowerCase())){
+            let rank;
+            if(i.minRank[0] === "IRON"){
+                rank = `<span class="grey-text">${i.minRank[0]}</span>`;
+            }
+            else if(i.minRank[0] === "BRONZE"){
+                rank = `<span class="brown-text">${i.minRank[0]}</span>`;
+            }
+            else if(i.minRank[0] === "SILVER"){
+                rank = `<span class="grey-text text-lighten-3">${i.minRank[0]}</span>`;
+            }
+            else if(i.minRank[0] === "GOLD"){
+                rank = `<span class="yellow-text text-accent-4">${i.minRank[0]}</span>`;
+            }
+            else if(i.minRank[0] === "PLATINUM"){
+                rank = `<span class="grey-text text-lighten-5">${i.minRank[0]}</span>`;
+            }
+
+            let reward = "";
+            let j;
+            for(j of i.rewards){
+                reward += j+", "
+            }
+            reward = reward.substring(0, reward.length-2);
+
+            jobsElement.innerHTML += `
+                <div class="job-card yellow accent-4">
+                    <div class="job-img">
+                        <img src="${i.img}" alt="">
+                    </div>
+                    <div class="job-info white">
+                        <h1>${i.task}</h1>
+                        <p>Min-Rank : ${rank}</p>
+                        <p>Reward : ${reward}</p>
+                        <p>Issuer : <a>${i.issuer.username}</a></p>
+                        <b style="color:red">*${i.deadline}</b>
+                    </div>
+                </div>
+            `;
+        }
+    }
+}
+
+showJobs();
+
+//event handler for filter jobs
+let jobsFilter = document.getElementsByName("jobs-filter");
+for(i of jobsFilter){
+    i.oninput = function(){
+        showJobs(this.value);
+    }
+}
+//event handler for filter jobs end
+//jobs end
 
 //choose skillset window appear when the user has null skillset
 if(loggedUser.skillset === null && !loggedUser.isManager){
