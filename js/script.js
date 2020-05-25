@@ -79,14 +79,12 @@ let loggedUser = getLoginCookie();
 //remove non admin content
 if(loggedUser.isManager){
     let nonAdminContents = document.getElementsByClassName("non-admin");
-    let i;
     for(i of nonAdminContents){
         i.style.display = "none";
     }
 }
 else{
     let adminContents = document.getElementsByClassName("admin");
-    let i;
     for(i of adminContents){
         i.style.display = "none";
     }
@@ -126,24 +124,6 @@ for(i of guild){
 let rank = document.getElementsByName("rank");
 for(i of rank){
     i.innerHTML = loggedUser.rank;
-    if(loggedUser.rank === "IRON"){
-        i.classList.add("grey-text");
-    }
-    else if(loggedUser.rank === "BRONZE"){
-        i.classList.add("brown-text");
-    }
-    else if(loggedUser.rank === "SILVER"){
-        i.classList.add("grey-text");
-        i.classList.add("text-lighten-3");
-    }
-    else if(loggedUser.rank === "GOLD"){
-        i.classList.add("yellow-text");
-        i.classList.add("text-accent-4");
-    }
-    else if(loggedUser.rank === "PLATINUM"){
-        i.classList.add("grey-text");
-        i.classList.add("text-lighten-5");
-    }
 }
 
 let point = document.getElementsByName("point");
@@ -190,18 +170,23 @@ for(i=0; i<rankUps.length; i++){
 
 //rank progress
 let progresses = document.getElementsByName("progress");
-for(i of progresses){
+let progressSentences = document.getElementsByName("progress-sentence");
+for(i=0; i<progresses.length; i++){
     if(loggedUser.rank === "IRON"){
-        i.style.width = `${loggedUser.point/5000*100}%`;
+        progresses[i].style.width = `${loggedUser.point/5000*100}%`;
+        progressSentences[i].innerHTML = `${Math.round(loggedUser.point/5000*100)}% to reach BRONZE`;
     }
     else if(loggedUser.rank === "BRONZE"){
-        i.style.width = `${(loggedUser.point-5000)/10000*100}%`;
+        progresses[i].style.width = `${(loggedUser.point-5000)/10000*100}%`;
+        progressSentences[i].innerHTML = `${Math.round((loggedUser.point-5000)/10000*100)}% to reach SILVER`;
     }
     else if(loggedUser.rank === "SILVER"){
-        i.style.width = `${(loggedUser.point-15000)/35000*100}%`;
+        progresses[i].style.width = `${(loggedUser.point-15000)/35000*100}%`;
+        progressSentences[i].innerHTML = `${Math.round((loggedUser.point-15000)/35000*100)}% to reach GOLD`;
     }
     else{
-        i.style.width = `${(loggedUser.point-50000)/100000*100}%`;
+        progresses[i].style.width = `${(loggedUser.point-50000)/100000*100}%`;
+        progressSentences[i].innerHTML = `${Math.round((loggedUser.point-50000)/100000*100)}% to reach PLATINUM`;
     }
 }
 //rank progress end

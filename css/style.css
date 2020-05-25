@@ -22,6 +22,22 @@ footer{
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
+#jobs-window form{
+    padding: 10px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#jobs-window .col{
+    display: flex;
+}
+
+#jobs-window .checkbox-container{
+    display: flex;
+    margin: auto;
+}
+
 footer.homepage{
     box-shadow: none
 }
@@ -264,7 +280,7 @@ header figcaption{
     display: flex;
 }
 
-.information i{
+.information .admin i{
     padding: 10px;
 }
 
@@ -527,87 +543,43 @@ main article p {
     margin: 0;
 }
 
-.modal-container{
-    display: none;
-    z-index: 2;
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    background-color: rgba(175, 175, 175, 0.4);
-    top: 0;
-}
-
-.modal-container *{
-    margin: 0;
-    padding: 0;
-}
-
-.modal-content h1{
-    text-align: center;
-    color: white;
-    margin: 0 10px;
-    padding: 20px;
-}
-
-.modal-content form{
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    padding-top: 10px;
-    margin: 0px 10px 10px 10px;
-    color: white;
-    overflow-y: auto;
-}
-
-.modal-content .container{
-    display: flex;
-    margin: 10px auto;
-    flex-direction: column;
-}
-
-.modal-content input[type="text"], .modal-content input[type="password"]{
-    color: white
-}
-
-.modal-content input[type="button"]{
-    margin-bottom: 20px;
-}
-
-.modal-content{
-    display: flex;
-    margin: 100px auto;
-    width: 90%;
-    flex-direction: column;
+.flying{
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+    padding: 20px;
+    margin: 20px -10px;
+    border-radius: 5px;
 }
 
-.close-modal-container{
+.reward-window .filter-container{
     display: flex;
-    flex-direction: row;
-    padding: 5px;
-    align-items: right;
-    justify-content: right;
 }
 
-.close-modal{
-    margin-top: -20px;
-    font-size: 40px;
-    font-weight: bolder;
+.reward-window .filter-container input[type="text"]{
+    width: 75%;
+    margin-right: 5%;
 }
 
-.close-modal:hover{
-    cursor: pointer;
-    font-weight: lighter;
+.reward-window .filter-container input[type="number"]{
+    width: 10%;
 }
 
-a.close-modal, .btn.close-modal{
-    margin: 0;
-    font-size: inherit;
-    font-weight: inherit;
+.reward-window .filter-container label{
+    width: 10%;
+    display: flex;
 }
 
-a.close-modal:hover{
-    font-weight:inherit;
+.reward-window .filter-container label b{
+    display: flex;
+    margin: auto;
+    font-size: 16px;
+}
+
+.reward-window .items{
+    display: flex;
+    flex-wrap: wrap;
+    max-height: 100px;
+    overflow-y: auto;
+    margin-bottom: 20px;
 }
 
 #about p{
@@ -622,7 +594,7 @@ a.close-modal:hover{
     flex-direction: row;
 }
 
-#guild-members-window, #guild-forum-window, #guilds-window{
+#guild-members-window, #guild-forum-window, #guilds-window, #jobs-window{
     display: none;
 }
 
@@ -698,7 +670,7 @@ a.close-modal:hover{
 }
 
 .user-card .btn-container{
-    padding-bottom: 10px;
+    padding: 10px 0;
 }
 
 .user-card .btn-container .btn{
@@ -933,14 +905,34 @@ a.close-modal:hover{
 
 .rank-up-bar{
     display: flex;
+    flex-direction: column;
+    box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.75);
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
 }
 
-.rank-up-bar .materials-icons-container{
+.rank-up-bar .row{
+    width: 100%;
     display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.rank-up-bar .row p{
+    display: flex;
+    padding: 5px 0;
+}
+
+.rank-up-bar .material-icons-container{
+    display: flex;
+    padding: 0 5px;
 }
 
 .rank-up-bar .material-icons{
-    height: 20px;
+    width: 100%;
+    display: flex;
+    margin: auto;
 }
 
 .rank-up-bar .progress{
@@ -949,11 +941,11 @@ a.close-modal:hover{
     height: 20px;
     display: flex;
     border : 1px solid black;
+    margin: auto 0;
 }
 
 .rank-up-bar .progress .blue{
     display: flex;
-    margin: auto 0;
     height: 100%;
 }
 
@@ -1136,10 +1128,6 @@ a.close-modal:hover{
 
     .user-card{
         width: 45%;
-    }
-    
-    .modal-content{
-        width: 30%;
     }
 
     .brief-guildhub-information .brief-explanation{

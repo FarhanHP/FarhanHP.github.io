@@ -40,6 +40,10 @@
     padding: 0;
 }
 
+.user-profile .row{
+    margin-bottom: 10px;
+}
+
 .user-profile .personal-information{
     border-radius: 5px;
     padding: 20px;

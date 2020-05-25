@@ -5,9 +5,7 @@ if(loggedUser.skillset === null){
     document.getElementsByName("skillset")[0].innerHTML = "N/A";
 }
 else{
-    document.getElementsByName("skillset")[0].innerHTML = `
-    ${loggedUser.skillset[0]}, ${loggedUser.skillset[1]}, ${loggedUser.skillset[2]}, ${loggedUser.skillset[3]}, ${loggedUser.skillset[4]}
-    `;
+    document.getElementsByName("skillset")[0].innerHTML = loggedUser.skillset.join(", ");
 }
 
 document.getElementsByName("nik")[0].innerHTML = loggedUser.nik;

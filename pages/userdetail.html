@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/profile-style.css">
     <title>GuildHub</title>
 </head>
 <body class="grey lighten-3">
@@ -27,7 +28,7 @@
                 </div>
                 <ul class="center-align yellow accent-4">
                     <li>
-                        <a class="visiting"><b>Home</b></a>
+                        <a href="home.html"><b>Home</b></a>
                     </li>
                     <li class="non-admin">
                         <a href="myguild.html"><b>My Guild</b></a>
@@ -110,16 +111,11 @@
                             </div>
 
                             <div class="rank-up-bar hide">
-                                <div class="row">
-                                    <p name="progress-sentence"></p>
+                                <div class="col s10 progress white">
+                                    <div class="blue" name="progress"></div>
                                 </div>
-                                <div class="row">
-                                    <div class="progress white">
-                                        <div class="blue" name="progress"></div>
-                                    </div>
-                                    <div class="material-icons-container">
-                                        <i class="material-icons grey-text">check</i>
-                                    </div>
+                                <div class="col s1 offset-s1 material-icons-container">
+                                    <i class="material-icons grey-text">check</i>
                                 </div>
                             </div>
         
@@ -137,7 +133,7 @@
                         </div>
 
                         <div class="admin">
-                            <h1>&lt; Admin &gt;</h1>
+                            <h1>&lt; Manager &gt;</h1>
                             <hr>
                             <p><i class="material-icons">account_circle</i><span name="fullname"></span></p>
                             <p><i class="material-icons">call</i><span name="handphone"></span></p>
@@ -147,107 +143,119 @@
             </aside>
         </div>
 
-        <!--Content-->
-        <div class="content col s12 l6 ">
-            <!--Select Skillset-->
-            <div class="black skillset-window">
-                <b class="white-text">Choose your skillset : <span class="teal-text text-lighten-2">*<span name="skillset-left"></span> Left</span></b>
+        <div class="content col s12 l6">
+            <div class="yellow accent-4 user-profile">
+                <div class="img-container">
+                    <img name="pp" alt="">
+                </div>
+                <div class="h-container">
+                    <h2 class="center-align white-text" name="userdetail-username"></h2>
+                    <h4 class="center-align white-text" name="userdetail-fullname"></h4>
+                </div>
                 <div class="row">
-                    <b class="white-text">Your Skillset : </b>
-                    <div id="choosen-skillset">
-                    </div>
-                    <form action="">
-                        <input type="text" name="skillset-filter" placeholder="Filter Skillset" class="white-text">
-                    </form>
-                    <div id="skillset">
-                    </div>
-                </div>
-                <div class="btn-container row">
-                    <div class="btn disabled" id="skillset-save"><p>Save</b></div>
-                </div>
-            </div>
-
-            <!--job taken-->
-            <div class="guild-profile yellow accent-4 non-admin">
-                <h1>Job Taken</h1>
-                <div class="white" id="job-taken">
-                    
-                </div>
-            </div>
-
-            <div class="guild-content yellow accent-4">
-                <nav>
-                    <div class="nav-wrapper">
-                        <ul>
-                            <li>
-                                <a id="users-window-btn" class="visiting"><b>Users</b></a>
-                            </li>
-                            <li>
-                                <a id="guilds-window-btn"><b>Guilds</b></a>
-                            </li>
-                            <li class="admin">
-                                <a id="jobs-window-btn"><b>Jobs</b></a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-                
-                <!--users-->
-                <div class="page-content white" id="users-window">
-                    <div class="row">
-                        <div class="col s0 m2">
+                    <div class="col s10 m8 offset-s1 offset-m2 white personal-information">
+                        <div class="row">
+                            <div class="col s6">
+                                <b>Role</b>
+                            </div>
+                            <div class="col s6">
+                                <p name="userdetail-role"></p>
+                            </div>
                         </div>
-                        <div class="col s12 m8 search">
-                            <form action="">
-                                <input type="text" placeholder="Filter Users" name="users-filter">
-                            </form>
+                        <div class="row">
+                            <div class="col s6">
+                                <b>Point</b>
+                            </div>
+                            <div class="col s6">
+                                <p name="userdetail-point"></p>
+                            </div>
                         </div>
-                        <div class="col s12 m2">
+                        <div class="row">
+                            <div class="col s6">
+                                <b>Gold</b>
+                            </div>
+                            <div class="col s6">
+                                <p name="userdetail-gold"></p>
+                            </div>
                         </div>
-                    </div>
-    
-                    <div id="users">
-                    </div>
-                </div>
-
-                <!--guilds-->
-                <div class="page-content white" id="guilds-window">
-                    <div class="row">
-                        <div class="col s12 m6 search">
-                            <form action="">
-                                <input type="text" placeholder="Filter Guilds" name="guilds-filter">
-                            </form>
+                        <div class="row">
+                            <div class="col s6">
+                                <b>Rank</b>
+                            </div>
+                            <div class="col s5">
+                                <p name="userdetail-rank"></p>
+                            </div>
                         </div>
-                        <div class="col s12 m6 non-admin">
-                            <div class="btn disabled"><p>Create a Guild</p></div>
-                        </div>
-                    </div>
-    
-                    <div id="guilds">
-                    </div>
-                </div>
-
-                <!--jobs-->
-                <div class="page-content white admin" id="jobs-window">
-                    <form action="" class="row">
-                        <input type="text" placeholder="Filter Jobs" name="jobs-filter" class="col s12 m6">
-                        <div class="col s12 m6" style="padding-left:20px; padding-top: 20px;">
-                            <label class="checkbox-container">
-                                <input type="checkbox" name="jobs-unfinished-check" class="filled-in"><span>Unfinished</span>
-                            </label>
-
-                            <label class="checkbox-container">
-                                <input type="checkbox" name="jobs-finished-check" class="filled-in"><span>Finished</span>
-                            </label>
-                        </div>
-                    </form>
-
-                    <div id="jobs">
                         
+                        <div class="row">
+                            <div class="col s6">
+                                <b>Rank Number</b>
+                            </div>
+                            <div class="col s6">
+                                <p name="userdetail-rank-number"></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s6">
+                                <b>Guild</b>
+                            </div>
+                            <div class="col s6">
+                                <p class="blue-text" name="userdetail-guild"></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s6">
+                                <b>Skillset</b>
+                            </div>
+                            <div class="col s6">
+                                <p name="userdetail-skillset"></p>
+                            </div>
+                        </div>
+                        <div class="separator">Personal Information</div>
+                        <div class="row">
+                            <div class="col s6">
+                                <b>NIK</b>
+                            </div>
+                            <div class="col s6">
+                                <p name="userdetail-nik"></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s6">
+                                <b>Birth Date</b>
+                            </div>
+                            <div class="col s6">
+                                <p name="userdetail-birthdate"></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s6">
+                                <b>Telephone</b>
+                            </div>
+                            <div class="col s6">
+                                <p name="userdetail-telephone"></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s6">
+                                <b>Handphone</b>
+                            </div>
+                            <div class="col s6">
+                                <p name="userdetail-handphone"></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s6">
+                                <b>Address</b>
+                            </div>
+                            <div class="col s6">
+                                <p name="userdetail-address"></p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div> 
+        </div>
     </main>
 
     <footer class="yellow accent-4">
@@ -259,6 +267,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="../js/data.js"></script>
     <script src="../js/script.js"></script>
-    <script src="../js/home.js"></script>
+    <script src="../js/userdetail.js"></script>
 </body>
 </html>

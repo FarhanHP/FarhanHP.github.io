@@ -6,23 +6,6 @@ if(loggedUser.takenJob === null){
 }
 else {
     let jobTaken = jobs[loggedUser.takenJob];
-    let rank;
-    if(jobTaken.minRank[0] === "IRON"){
-        rank = `<span class="grey-text">${jobTaken.minRank[0]}</span>`;
-    }
-    else if(jobTaken.minRank[0] === "BRONZE"){
-        rank = `<span class="brown-text">${jobTaken.minRank[0]}</span>`;
-    }
-    else if(jobTaken.minRank[0] === "SILVER"){
-        rank = `<span class="grey-text text-lighten-3">${jobTaken.minRank[0]}</span>`;
-    }
-    else if(jobTaken.minRank[0] === "GOLD"){
-        rank = `<span class="yellow-text text-accent-4">${jobTaken.minRank[0]}</span>`;
-    }
-    else if(jobTaken.minRank[0] === "PLATINUM"){
-        rank = `<span class="grey-text text-lighten-5">${jobTaken.minRank[0]}</span>`;
-    }
-
     let reward = "";
     let j;
     for(j of jobTaken.rewards){
@@ -37,7 +20,7 @@ else {
             </div>
             <div class="job-info white">
                 <h1>${jobTaken.task}</h1>
-                <p>Min-Rank : ${rank}</p>
+                <p>Min-Rank : ${jobTaken.minRank[0]}</p>
                 <p>Reward : ${reward}</p>
                 <p>Issuer : <a>${jobTaken.issuer.username}</a></p>
                 <b style="color:red">*${jobTaken.deadline}</b>
@@ -111,29 +94,21 @@ function showUsers(keyword=""){
     let selectedUsers = getGuildMembers(null, keyword);
     let i;
     for(i of selectedUsers){
-        let rank;
+        let btn = "";
+        if(loggedUser.isManager){
+            btn = `
+                <div class="btn-container">
+                    <div class="btn user-detail" id="user-${i.id}"><b>Detail</b></div>
+                </div>
+            `;
+        }
+
         let guild;
         if(i.guild === null){
             guild = "";
         }
         else{
             guild = `(${i.guild.name})`;
-        }
-
-        if(i.rank === "IRON"){
-            rank = `<span class="grey-text">${i.rank}</span>`;
-        }
-        else if(i.rank === "BRONZE"){
-            rank = `<span class="brown-text">${i.rank}</span>`;
-        }
-        else if(i.rank === "SILVER"){
-            rank = `<span class="grey-text text-lighten-3">${i.rank}</span>`;
-        }
-        else if(i.rank === "GOLD"){
-            rank = `<span class="yellow-text text-accent-4">${i.rank}</span>`;
-        }
-        else if(i.rank === "PLATINUM"){
-            rank = `<span class="grey-text text-lighten-5">${i.rank}</span>`;
         }
 
         usersElement.innerHTML += `
@@ -147,9 +122,10 @@ function showUsers(keyword=""){
                     <hr>
                     <div class="center-align">
                         <p><b>Role</b> : ${i.role}</p>
-                        <p><b>Rank</b> : ${rank}</p>
+                        <p><b>Rank</b> : ${i.rank}</p>
                         <p><b>Point</b> : ${numberBeautify(i.point)}</p>
                     </div>
+                    ${btn}
                 </div>
             </div>
         `;
@@ -167,6 +143,19 @@ for(i of usersFilter){
     };
 }
 //event handler for filter users end
+
+//event handler for user detail (admin only)
+if(loggedUser.isManager){
+    let userDetailBtns = document.getElementsByClassName("user-detail");
+    let i;
+    for(i of userDetailBtns){
+        i.onclick = function(){
+            window.location.href = "../pages/userdetail.html";
+            setCookie("userdetail", this.id.replace("user-", ""));
+        }
+    }
+}
+//event handler for user detail (admin only) end
 //users end
 
 //guilds
@@ -251,64 +240,86 @@ for(i=0; i<guilds.length; i++){
 //guilds end
 
 //jobs
-function showJobs(keyword=""){
+function showJobs(keyword, unfinished, finished){
     let jobsElement = document.getElementById("jobs");
     jobsElement.innerHTML = "";
 
     let i;
-    for(i of jobs){
-        if(i.task.toLowerCase().includes(keyword.toLowerCase())){
-            let rank;
-            if(i.minRank[0] === "IRON"){
-                rank = `<span class="grey-text">${i.minRank[0]}</span>`;
-            }
-            else if(i.minRank[0] === "BRONZE"){
-                rank = `<span class="brown-text">${i.minRank[0]}</span>`;
-            }
-            else if(i.minRank[0] === "SILVER"){
-                rank = `<span class="grey-text text-lighten-3">${i.minRank[0]}</span>`;
-            }
-            else if(i.minRank[0] === "GOLD"){
-                rank = `<span class="yellow-text text-accent-4">${i.minRank[0]}</span>`;
-            }
-            else if(i.minRank[0] === "PLATINUM"){
-                rank = `<span class="grey-text text-lighten-5">${i.minRank[0]}</span>`;
-            }
-
-            let reward = "";
-            let j;
-            for(j of i.rewards){
-                reward += j+", "
-            }
-            reward = reward.substring(0, reward.length-2);
-
-            jobsElement.innerHTML += `
-                <div class="job-card yellow accent-4">
-                    <div class="job-img">
-                        <img src="${i.img}" alt="">
+    if(unfinished){
+        for(i of jobs){
+            if(i.task.toLowerCase().includes(keyword.toLowerCase())){
+                let reward = "";
+                let j;
+                for(j of i.rewards){
+                    reward += j+", "
+                }
+                reward = reward.substring(0, reward.length-2);
+    
+                jobsElement.innerHTML += `
+                    <div class="job-card yellow accent-4">
+                        <div class="job-img">
+                            <img src="${i.img}" alt="">
+                        </div>
+                        <div class="job-info white">
+                            <h1>${i.task}</h1>
+                            <p>Min-Rank : ${i.minRank[0]}</p>
+                            <p>Reward : ${reward}</p>
+                            <p>Issuer : <a>${i.issuer.username}</a></p>
+                            <b class="red-text">*${i.deadline}</b>
+                        </div>
                     </div>
-                    <div class="job-info white">
-                        <h1>${i.task}</h1>
-                        <p>Min-Rank : ${rank}</p>
-                        <p>Reward : ${reward}</p>
-                        <p>Issuer : <a>${i.issuer.username}</a></p>
-                        <b style="color:red">*${i.deadline}</b>
+                `;
+            }
+        }
+    }
+
+    if(finished){
+        for(i of finishedJobs){
+            if(i.task.toLowerCase().includes(keyword.toLowerCase())){
+                let reward = "";
+                let j;
+                for(j of i.rewards){
+                    reward += j+", "
+                }
+                reward = reward.substring(0, reward.length-2);
+    
+                jobsElement.innerHTML += `
+                    <div class="job-card yellow accent-4">
+                        <div class="job-img">
+                            <img src="${i.img}" alt="">
+                        </div>
+                        <div class="job-info white">
+                            <h1>${i.task}</h1>
+                            <p>Min-Rank : ${i.minRank[0]}</p>
+                            <p>Reward : ${reward}</p>
+                            <p>Issuer : <a>${i.issuer.username}</a></p>
+                            <p>Finisher : <a>${i.finisher.username}</a></p>
+                            <b class="blue-text">*Finished ${i.finished}</b>
+                        </div>
                     </div>
-                </div>
-            `;
+                `;
+            }
         }
     }
 }
 
-showJobs();
+showJobs("", true, true);
 
 //event handler for filter jobs
-let jobsFilter = document.getElementsByName("jobs-filter");
-for(i of jobsFilter){
-    i.oninput = function(){
-        showJobs(this.value);
-    }
+let jobsFilter = document.getElementsByName("jobs-filter")[0];
+let unfinishedJobsCheckbox = document.getElementsByName("jobs-unfinished-check")[0];
+let finishedJobsCheckbox = document.getElementsByName("jobs-finished-check")[0];
+
+let checkBoxClicked = function(){
+    showJobs(jobsFilter.value, unfinishedJobsCheckbox.checked, finishedJobsCheckbox.checked);
 }
+
+unfinishedJobsCheckbox.checked = true;
+finishedJobsCheckbox.checked = true;
+
+unfinishedJobsCheckbox.onclick = checkBoxClicked;
+finishedJobsCheckbox.onclick = checkBoxClicked;
+jobsFilter.oninput = checkBoxClicked;
 //event handler for filter jobs end
 //jobs end
 

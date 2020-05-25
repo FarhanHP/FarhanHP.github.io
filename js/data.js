@@ -259,6 +259,128 @@ let jobs = [{
     deadline : "6 Days Remaining"
 }];
 
+let finishedJobs = [{
+    no: 0,
+    task : "Kill 20 Goblins",
+    img : "../img/job/wow-goblin.png",
+    issuer: users[1],
+    minRank : ["BRONZE", 5000],
+    rewards : ["400 Gold", "2x Health Potion"],
+    finished : "2019-01-28",
+    finisher : users[4]
+}, {
+    no: 1,
+    task : "Protect a Merchant Caravan",
+    img : "../img/job/cv-caravan.png",
+    issuer: users[1],
+    minRank : ["SILVER", 15000],
+    rewards : ["1000 Gold"],
+    finished : "2019-01-31",
+    finisher : users[4]
+}, {
+    no: 2,
+    task : "Kill a Dragon",
+    img : "../img/job/wow-dragon.png",
+    issuer: users[1],
+    minRank : ["GOLD", 50000],
+    rewards : ["9000 Gold", "Dragon Boot"],
+    finished : "2019-02-04",
+    finisher : users[2]
+}, {
+    no: 3,
+    task : "Skeleton Dungeon Raid : Reach 4th Floor",
+    img : "../img/job/ac-skeleton-dungeon.png",
+    issuer: users[1],
+    minRank : ["IRON", 0],
+    rewards : ["300 Gold"],
+    deadline : "6 Days Remaining",
+    finished : "2019-02-05",
+    finisher : users[5]
+}, {
+    no: 4,
+    task : "Kill 10 Goblins",
+    img : "../img/job/wow-goblin.png",
+    issuer: users[2],
+    minRank : ["BRONZE", 5000],
+    rewards : ["1400 Gold", "2x Health Potion"],
+    finished : "2019-02-19",
+    finisher : users[1]
+}, {
+    no:5,
+    task : "Protect 2 Merchant Caravans",
+    img : "../img/job/cv-caravan.png",
+    issuer: users[2],
+    minRank : ["SILVER", 15000],
+    rewards : ["1000 Gold"],
+    finished : "2019-02-20",
+    finisher : users[1]
+}, {
+    no:6,
+    task : "Capture a Dragon",
+    img : "../img/job/wow-dragon.png",
+    issuer: users[2],
+    minRank : ["GOLD", 50000],
+    rewards : ["12000 Gold", "Dragon Boot"],
+    finished : "2019-04-16",
+    finisher : users[1]
+}, {
+    no:7,
+    task : "Skeleton Dungeon Raid : Reach 12th Floor",
+    img : "../img/job/ac-skeleton-dungeon.png",
+    issuer: users[2],
+    minRank : ["BRONZE", 5000],
+    rewards : ["1000 Gold"],
+    finished : "2019-05-09",
+    finisher : users[3]
+}, {
+    no:8,
+    task : "Kill 20 Goblins",
+    img : "../img/job/wow-goblin.png",
+    issuer: users[3],
+    minRank : ["BRONZE", 5000],
+    rewards : ["2500 Gold", "4x Health Potion"],
+    finished : "2019-07-21",
+    finisher : users[4]
+}, {
+    no:9,
+    task : "Protect a Merchant Caravan",
+    img : "../img/job/cv-caravan.png",
+    issuer: users[4],
+    minRank : ["SILVER", 15000],
+    rewards : ["1000 Gold"],
+    finished : "2019-07-22",
+    finisher : users[3]
+}, {
+    no:10,
+    task : "Kill 2 Dragons",
+    img : "../img/job/wow-dragon.png",
+    issuer: users[4],
+    minRank : ["GOLD", 50000],
+    rewards : ["18000 Gold", "2x Dragon Boot", "1x Double Points Coupon"],
+    finished : "2019-09-01",
+    finisher : users[1]
+}, {
+    no:11,
+    task : "Skeleton Dungeon Raid : Reach 10th Floor",
+    img : "../img/job/ac-skeleton-dungeon.png",
+    issuer: users[4],
+    minRank : ["IRON", 0],
+    rewards : ["1000 Gold"],
+    deadline : "6 Days Remaining",
+    finished : "2019-09-24",
+    finisher : users[2]
+}, {
+    no:12,
+    task : "Raid 12 Merchant Caravan",
+    img : "../img/job/cv-caravan.png",
+    issuer: users[5],
+    minRank : ["IRON", 0],
+    rewards : ["20000 Gold", "1x Gold Dagger"],
+    finished : "2019-12-24",
+    finisher : users[2]
+}];
+
+let items = ["Dagger", "Dragon Boot", "Gold", "Double Point", "Double Gold", "Golden Dagger", "Health Potion", "Mana Potion", "Undead Broadsword"]
 
 function generatePassword(length){
     let char = ["abcdefghijklmnopqrstuvwxyz", "ABCDEFGHIJKLMNOPQRSTUVWXYZ", "0123456789", "$@#&!"];
