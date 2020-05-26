@@ -556,7 +556,6 @@ main article p {
 
 .reward-window .filter-container input[type="text"]{
     width: 75%;
-    margin-right: 5%;
 }
 
 .reward-window .filter-container input[type="number"]{
@@ -1079,6 +1078,9 @@ main article p {
 
 /*Medium Screen*/
 @media screen and (min-width: 601px){
+    .reward-window .filter-container input[type="text"]{
+        margin-right: 5%;
+    }
     #register-page > div{
         padding: 40px;
     }
