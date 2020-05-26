@@ -1,3 +1,6 @@
+alert("Cara membuka Admin Page ada di FAQ Q8 ya !")
+
+
 //sticky
 let navbar = document.getElementsByTagName("nav")[0];
 let offsetTopNavbar = navbar.offsetTop;

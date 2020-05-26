@@ -582,6 +582,13 @@ main article p {
     margin-bottom: 20px;
 }
 
+.login-security{
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
 #about p{
     font-size: 20px;
 }

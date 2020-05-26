@@ -145,6 +145,7 @@ for(i of fullname){
 //event handler for logout
 document.getElementById("logout").addEventListener("click", function(){
     deleteLoginCookie();
+    deleteRegisterCookie();
     window.location.href = "../index.html";
 })
 //event handler for logout end

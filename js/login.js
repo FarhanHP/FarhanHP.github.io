@@ -40,6 +40,47 @@ let loginBtn = document.getElementsByName("submit-login")[0];
 let usernameLogin = document.getElementsByName("username-login")[0];
 let passwordLogin = document.getElementsByName("password-login")[0];
 
+//login security
+let loginSecurityElement = document.getElementsByClassName("login-security")[0];
+let loginSecurity;
+let loginSecurityAns;
+
+function generateLoginSecurity(){
+    let number = "0123456789";
+    let operator = "*+/-";
+    
+    while(true){
+        loginSecurity = [];
+        loginSecurity.push(number.charAt(Math.floor(Math.random()*number.length)));
+        loginSecurity.push(operator.charAt(Math.floor(Math.random()*operator.length)));
+        loginSecurity.push(number.charAt(Math.floor(Math.random()*number.length)));
+
+        if(loginSecurity[1] === "*"){
+            loginSecurityAns = Number(loginSecurity[0])*Number(loginSecurity[2]);
+        }
+        else if(loginSecurity[1] === "+"){
+            loginSecurityAns = Number(loginSecurity[0])+Number(loginSecurity[2]);
+        }
+        else if(loginSecurity[1] === "/"){
+            loginSecurityAns = Number(loginSecurity[0])/Number(loginSecurity[2]);
+        }
+        else{
+            loginSecurityAns = Number(loginSecurity[0])-Number(loginSecurity[2]);
+        }
+
+        if(!String(loginSecurityAns).includes(".") && isFinite(loginSecurityAns)){
+            break;
+        }
+    }
+
+    loginSecurityElement.innerHTML = `
+        <p>Berapakah ${loginSecurity.join(" ")} ?</p>
+    `;
+}
+
+generateLoginSecurity();
+//login security end
+
 usernameLogin.value = "";
 passwordLogin.value = "";
 
@@ -69,6 +110,18 @@ loginBtn.onclick = function(){
         errorLogin.innerHTML = "*Username or Password Invalid";
     }
     else{
+        try{
+            if(parseInt(document.getElementsByName("login-security-answer")[0].value) !== loginSecurityAns){
+                errorLogin.innerHTML = "Invalid Answer";
+                generateLoginSecurity();
+                return;
+            }
+        }
+        catch{
+            errorLogin.innerHTML = "Invalid Answer";
+            generateLoginSecurity();
+            return;
+        }
         setLoginCookie(users[result.id]);
         window.location.href ="../pages/home.html";
     }
