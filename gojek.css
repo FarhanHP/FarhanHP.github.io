@@ -96,3 +96,10 @@ img{
     display: flex;
     margin: 20px;
 }
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
