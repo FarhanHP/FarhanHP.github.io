@@ -1,0 +1,98 @@
+.nav-wrapper{
+    display: flex;
+}
+
+.gojek-logo{
+    display: flex;
+    margin-right: 20px;
+}
+
+img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.information{
+    margin: 100px 0;
+}
+
+.information img{
+    border-radius: 10px;
+}
+
+.sub-information-right{
+    padding-left: 50px;
+}
+
+.card-container{
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.gojek-card{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.75);
+    width: 20%;
+}
+
+.gojek-card:hover{
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+    cursor: pointer;
+}
+
+.gojek-card .img-container{
+    display: flex;
+    height: 30%;
+}
+
+.img-container img{
+    display: flex;
+    margin: auto;
+}
+
+.page-footer .col{
+    padding: 0;
+    margin: 0;
+}
+
+.page-footer li{
+    padding: 10px;
+}
+
+.page-footer a{
+    color: white;
+}
+
+.page-footer a:hover{
+    text-decoration: underline;
+    color: green;
+}
+
+.page-footer h3{
+    margin: 0;
+}
+
+.medsos-logo-container{
+    display: flex;
+    padding: 20px;
+}
+
+.medsos-logo-container img{
+    width: 40px;
+    display: flex;
+}
+
+.download-logo-container{
+    display: flex;
+}
+
+.download-logo-container img{
+    display: flex;
+    margin: 20px;
+}
